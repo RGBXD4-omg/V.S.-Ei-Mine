@@ -42,7 +42,7 @@ class FlashingState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		#if android
-                var justTouched:Bool = controls.ACCEPT;
+                var justTouched:Bool = false;
 
 		for (touch in FlxG.touches.list)
 		{
@@ -55,7 +55,7 @@ class FlashingState extends MusicBeatState
 			
 		if(!leftState) {
 			var back:Bool = controls.BACK;
-			if (controls.ACCEPT || back) {
+			if (controls.ACCEPT || back || justTouched) {
 				leftState = true;
 				FlxTransitionableState.skipNextTransIn = true;
 				FlxTransitionableState.skipNextTransOut = true;
