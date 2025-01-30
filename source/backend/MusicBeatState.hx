@@ -38,15 +38,13 @@ class MusicBeatState extends FlxUIState
 		Controls.CheckPress = false;
 	        }
 
-		public function addMobileControls()
+		public function addMobileControls(hType:Modes = DEFAULT)
 		{
 			if (mobileControls != null)
 			removeMobileControls();
-			
-			Controls.CheckPress = false;
 			checkHitbox = true;
 
-			mobileControls = new MobileControls();
+			mobileControls = new MobileControls(hType);
 
 			var camControls:FlxCamera = new FlxCamera();
 			FlxG.cameras.add(camControls, false);
