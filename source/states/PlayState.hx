@@ -56,7 +56,9 @@ import tea.SScript;
 #end
 import portable.utils.WinUtil;
 import portable.objects.MCBar;
-
+#if android
+import mobile.FlxHitbox.Modes;
+#end
 /**
  * This is where all the Gameplay stuff happens and is managed
  *
@@ -671,7 +673,7 @@ class PlayState extends MusicBeatState
 
 		#if android
 		addMobileControls(DEFAULT);
-		mobileControls.visible = true;
+		MusicBeatState.mobileControls.visible = true;
 		#end
 	}
 
