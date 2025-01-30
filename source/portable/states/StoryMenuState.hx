@@ -189,8 +189,9 @@ class StoryMenuState extends MusicBeatState
 		add(backButton);
 
 		backButton1 = new MCButton(">", 15, FlxG.height - 0, SQUARE);
-		backButton1.callback = function()
+		backButton1.callback = function(self)
 		{
+			self.disabled = true;
 			changeDifficulty(1);
 		};
 		backButton1.scrollFactor.set();
@@ -251,7 +252,7 @@ class StoryMenuState extends MusicBeatState
 				leftArrow.animation.play('idle');
 
 			if (controls.UI_RIGHT_P)
-				backButton1.callback();
+				backButton1.callback(backButton1);
 			else if (controls.UI_LEFT_P)
 				changeDifficulty(-1);
 			else if (upP || downP)
