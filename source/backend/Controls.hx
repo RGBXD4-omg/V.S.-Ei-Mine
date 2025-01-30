@@ -172,8 +172,6 @@ class Controls
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-		switch(hType){
-			case DEFAULT:
 			if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
         		if(result) {controllerMode = true; return true;}
@@ -190,7 +188,6 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
-		    }
     		}//MusicBeatState.checkHitbox
 	    }//CheckControl
 	    return false;
@@ -203,8 +200,6 @@ class Controls
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-    		    switch(hType){
-			case DEFAULT:
 			if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
         		if(result) {controllerMode = true; return true;}
@@ -221,7 +216,6 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
-		    }
     		}//MusicBeatState.checkHitbox
 	    }//CheckControl
         return false;
@@ -234,8 +228,6 @@ class Controls
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-    		    switch(hType){
-			case DEFAULT:
 			if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
         		if(result) {controllerMode = true; return true;}
@@ -252,7 +244,6 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
-		    }
     		}//MusicBeatState.checkHitbox
 	    }//CheckControl
 	    return false;
