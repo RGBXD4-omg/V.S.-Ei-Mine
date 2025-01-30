@@ -186,6 +186,14 @@ class StoryMenuState extends MusicBeatState
 		backButton.scrollFactor.set();
 		add(backButton);
 
+		backButton1 = new MCButton(">", 15, FlxG.height - 0, SQUARE);
+		backButton1.callback = function()
+		{
+			changeDifficulty(1);
+		};
+		backButton1.scrollFactor.set();
+		add(backButton1);
+
 		super.create();
 	}
 
@@ -241,7 +249,7 @@ class StoryMenuState extends MusicBeatState
 				leftArrow.animation.play('idle');
 
 			if (controls.UI_RIGHT_P)
-				changeDifficulty(1);
+				backButton1.callback();
 			else if (controls.UI_LEFT_P)
 				changeDifficulty(-1);
 			else if (upP || downP)
@@ -266,7 +274,7 @@ class StoryMenuState extends MusicBeatState
 
 		if (controls.BACK && !movedBack && !selectedWeek)
 		{
-			backButton.callback(backButton);
+			backButton.callback(backbutton);
 			movedBack = true;
 		}
 
