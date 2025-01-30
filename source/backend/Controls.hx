@@ -7,7 +7,7 @@ import flixel.input.keyboard.FlxKey;
 #if android
 import mobile.MobileControls;
 import mobile.FlxHitbox;
-import mobile.FlxHitbox.Modes;
+//import mobile.FlxHitbox.Modes;
 import flixel.ui.FlxButton;
 #end
 
@@ -166,7 +166,7 @@ class Controls
 	}
 
 	#if android
-	private function checkAndroidControl_justPressed(key:String, hType:Modes = DEFAULT):Bool
+	private function checkAndroidControl_justPressed(key:String):Bool
 	{
 	    var result:Bool = false;	    
 		//------------------note
@@ -193,7 +193,7 @@ class Controls
 	    return false;
     }        
     
-    private function checkAndroidControl_pressed(key:String, hType:Modes = DEFAULT):Bool
+    private function checkAndroidControl_pressed(key:String):Bool
     {
     var result:Bool = false;    
         
@@ -222,7 +222,7 @@ class Controls
 	   // if (result) return true;
     }
     
-    private function checkAndroidControl_justReleased(key:String, hType:Modes = DEFAULT):Bool
+    private function checkAndroidControl_justReleased(key:String):Bool
     {
     var result:Bool = false;
 		//------------------note
