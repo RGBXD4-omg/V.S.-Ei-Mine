@@ -9,6 +9,7 @@ import objects.MenuCharacter;
 import objects.MenuItem;
 import substates.GameplayChangersSubstate;
 import substates.ResetScoreSubState;
+import portable.objects.MCButton;
 
 class StoryMenuState extends MusicBeatState
 {
