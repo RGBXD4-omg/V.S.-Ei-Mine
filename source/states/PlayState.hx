@@ -672,7 +672,15 @@ class PlayState extends MusicBeatState
 			checkEventNote();
 
 		#if android
-		addMobileControls();
+		switch (SONG.song.toLowerCase())
+		{
+		case 'exposed':
+		addMobileControls(DOUBLE);
+		default:
+		addMobileControls(DEFAULT);
+		}
+		#end
+		#if android
 		MusicBeatState.mobileControls.visible = true;
 		#end
 	}
