@@ -32,6 +32,18 @@ class FlashingState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		#if android
+                var justTouched:Bool = controls.ACCEPT;
+
+		for (touch in FlxG.touches.list)
+		{
+			if (touch.justPressed)
+			{
+				justTouched = true;
+			}
+		}
+		#end
+			
 		if(!leftState) {
 			var back:Bool = controls.BACK;
 			if (controls.ACCEPT || back) {
