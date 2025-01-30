@@ -62,7 +62,6 @@ class MusicBeatState extends FlxUIState
 			if (mobileControls != null)
 			remove(mobileControls);
 		}
-	#end
 
 		override function destroy()
 		{
