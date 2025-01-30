@@ -87,6 +87,6 @@ class FlxHitbox extends FlxSpriteGroup
 		return hint;
 	}
 }
-enum mode{
+enum Modes{
 DEFAULT;
 }
