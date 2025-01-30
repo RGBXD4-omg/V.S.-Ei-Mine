@@ -48,10 +48,8 @@ class MusicBeatState extends FlxUIState
 			checkh1 = true;
 			checkHitbox = false;
 			}*/
-switch(hType){
-			case DEFAULT:
 			checkHitbox = true;
-}
+			
 			mobileControls = new MobileControls(hType);
 
 			var camControls:FlxCamera = new FlxCamera();
