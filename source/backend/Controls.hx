@@ -8,7 +8,6 @@ import flixel.input.keyboard.FlxKey;
 import mobile.MobileControls;
 import mobile.FlxHitbox;
 import flixel.ui.FlxButton;
-import mobile.FlxHitbox.Modes;
 #end
 
 class Controls
@@ -166,13 +165,13 @@ class Controls
 	}
 
 	#if android
-	private function checkAndroidControl_justPressed(key:String):Bool
+	private function checkAndroidControl_justPressed(key:String, hType:Modes = DEFAULT):Bool
 	{
 	    var result:Bool = false;	    
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-		switch(mode){
+		switch(hType){
 			case DEFAULT:
 			if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
@@ -196,14 +195,14 @@ class Controls
 	    return false;
     }        
     
-    private function checkAndroidControl_pressed(key:String):Bool
+    private function checkAndroidControl_pressed(key:String, hType:Modes = DEFAULT):Bool
     {
     var result:Bool = false;    
         
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-    		    switch(mode){
+    		    switch(hType){
 			case DEFAULT:
 			if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
@@ -228,13 +227,13 @@ class Controls
 	   // if (result) return true;
     }
     
-    private function checkAndroidControl_justReleased(key:String):Bool
+    private function checkAndroidControl_justReleased(key:String, hType:Modes = DEFAULT):Bool
     {
     var result:Bool = false;
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-    		    switch(mode){
+    		    switch(hType){
 			case DEFAULT:
 			if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
