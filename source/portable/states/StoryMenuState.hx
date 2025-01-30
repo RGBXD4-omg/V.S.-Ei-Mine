@@ -179,12 +179,6 @@ class StoryMenuState extends MusicBeatState
 		changeDifficulty();
 
 		backButton = new MCButton("<", 10, FlxG.height - 60, SQUARE);
-		backButton.callback = function(self)
-		{
-			self.disabled = true;
-			MusicBeatState.switchState(new MainMenuState());
-			FlxG.sound.playMusic(Paths.music('freakyMenu'));
-		};
 		backButton.scrollFactor.set();
 		add(backButton);
 
@@ -266,7 +260,15 @@ class StoryMenuState extends MusicBeatState
 			}
 		}
 
-		if (controls.BACK && !selectedWeek)
+		backButton.callback = function(self)
+		{
+			self.disabled = true;
+			movedBack = true;
+			MusicBeatState.switchState(new MainMenuState());
+			FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		};
+
+		if (controls.BACK && !movedBack && !selectedWeek)
 		{
 			backButton.callback(backButton);
 		}
