@@ -31,7 +31,7 @@ class MusicBeatState extends FlxUIState
 
 	var _psychCameraInitialized:Bool = false;
 	public static var checkHitbox:Bool = false;
-	public static var checkHitbox:Bool = false;
+	public static var checkh1:Bool = false;
 
 	       #if mobile
 		public static var mobileControls:MobileControls;
