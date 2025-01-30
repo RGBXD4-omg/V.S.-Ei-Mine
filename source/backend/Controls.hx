@@ -8,6 +8,7 @@ import flixel.input.keyboard.FlxKey;
 import mobile.MobileControls;
 import mobile.FlxHitbox;
 import flixel.ui.FlxButton;
+import mobile.FlxHitbox.Modes;
 #end
 
 class Controls
@@ -171,7 +172,9 @@ class Controls
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-    		    if (key == 'note_up'){
+		switch(mode){
+			case DEFAULT:
+			if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
@@ -187,6 +190,7 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
+		    }
     		}//MusicBeatState.checkHitbox
 	    }//CheckControl
 	    return false;
@@ -199,22 +203,25 @@ class Controls
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-    		    if (key == 'note_up'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.pressed == true);
+    		    switch(mode){
+			case DEFAULT:
+			if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_down'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.pressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_left'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.pressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_right'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.pressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
+		    }
     		}//MusicBeatState.checkHitbox
 	    }//CheckControl
         return false;
@@ -227,22 +234,25 @@ class Controls
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-    		    if (key == 'note_up'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justReleased == true);
+    		    switch(mode){
+			case DEFAULT:
+			if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_down'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justReleased == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_left'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justReleased == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_right'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justReleased == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
+		    }
     		}//MusicBeatState.checkHitbox
 	    }//CheckControl
 	    return false;
