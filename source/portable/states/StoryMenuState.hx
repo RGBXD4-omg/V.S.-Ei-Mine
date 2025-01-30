@@ -276,7 +276,7 @@ class StoryMenuState extends MusicBeatState
 
 		if (controls.BACK && !movedBack && !selectedWeek)
 		{
-			backButton.callback(backbutton);
+			backButton.callback(backButton);
 			movedBack = true;
 		}
 
