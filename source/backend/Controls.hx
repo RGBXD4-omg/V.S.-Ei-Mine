@@ -7,6 +7,7 @@ import flixel.input.keyboard.FlxKey;
 #if android
 import mobile.MobileControls;
 import mobile.FlxHitbox;
+import mobile.FlxHitbox.Modes;
 import flixel.ui.FlxButton;
 #end
 
