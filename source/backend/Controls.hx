@@ -4,6 +4,11 @@ import flixel.input.gamepad.FlxGamepadButton;
 import flixel.input.gamepad.FlxGamepadInputID;
 import flixel.input.gamepad.mappings.FlxGamepadMapping;
 import flixel.input.keyboard.FlxKey;
+#if android
+import mobile.MobileControls;
+import mobile.FlxHitbox;
+import flixel.ui.FlxButton;
+#end
 
 class Controls
 {
@@ -85,12 +90,15 @@ class Controls
 	//Gamepad & Keyboard stuff
 	public var keyboardBinds:Map<String, Array<FlxKey>>;
 	public var gamepadBinds:Map<String, Array<FlxGamepadInputID>>;
+
+	public static var CheckPress:Bool = false;
+        public static var CheckControl:Bool = false;
 	public function justPressed(key:String)
 	{
 		var result:Bool = (FlxG.keys.anyJustPressed(keyboardBinds[key]) == true);
 		if(result) controllerMode = false;
 
-		return result || _myGamepadJustPressed(gamepadBinds[key]) == true;
+		return result || _myGamepadJustPressed(gamepadBinds[key]) == true #if android || checkAndroidControl_justPressed(key) == true #end;
 	}
 
 	public function pressed(key:String)
@@ -98,7 +106,7 @@ class Controls
 		var result:Bool = (FlxG.keys.anyPressed(keyboardBinds[key]) == true);
 		if(result) controllerMode = false;
 
-		return result || _myGamepadPressed(gamepadBinds[key]) == true;
+		return result || _myGamepadPressed(gamepadBinds[key]) == true #if android || checkAndroidControl_pressed(key) == true #end;
 	}
 
 	public function justReleased(key:String)
@@ -106,7 +114,7 @@ class Controls
 		var result:Bool = (FlxG.keys.anyJustReleased(keyboardBinds[key]) == true);
 		if(result) controllerMode = false;
 
-		return result || _myGamepadJustReleased(gamepadBinds[key]) == true;
+		return result || _myGamepadJustReleased(gamepadBinds[key]) == true #if android || checkAndroidControl_justReleased(key) == true #end;
 	}
 
 	public var controllerMode:Bool = false;
@@ -155,6 +163,92 @@ class Controls
 		}
 		return false;
 	}
+
+	#if android
+	private function checkAndroidControl_justPressed(key:String):Bool
+	{
+	    var result:Bool = false;	    
+		//------------------note
+		if (CheckControl){
+    		if (MusicBeatState.checkHitbox){
+    		    if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_down'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_left'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_right'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+    		    }
+    		}//MusicBeatState.checkHitbox
+	    }//CheckControl
+	    return false;
+    }        
+    
+    private function checkAndroidControl_pressed(key:String):Bool
+    {
+    var result:Bool = false;    
+        
+		//------------------note
+		if (CheckControl){
+    		if (MusicBeatState.checkHitbox){
+    		    if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_down'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_left'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_right'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+    		    }
+    		}//MusicBeatState.checkHitbox
+	    }//CheckControl
+        return false;
+	   // if (result) return true;
+    }
+    
+    private function checkAndroidControl_justReleased(key:String):Bool
+    {
+    var result:Bool = false;
+		//------------------note
+		if (CheckControl){
+    		if (MusicBeatState.checkHitbox){
+    		    if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_down'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_left'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_right'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+    		    }
+    		}//MusicBeatState.checkHitbox
+	    }//CheckControl
+	    return false;
+	  //  if (result) return true;    
+    }    
+    #end
 
 	// IGNORE THESE
 	public static var instance:Controls;
