@@ -26,6 +26,7 @@ class StoryMenuState extends MusicBeatState
 	private static var curWeek:Int = 0;
 
 	var backButton:MCButton;
+	var backButton1:MCButton;
 
 	var txtTracklist:FlxText;
 
