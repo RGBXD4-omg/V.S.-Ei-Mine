@@ -1,4 +1,4 @@
-package mobile.flixel;
+package mobile;
 
 import flixel.FlxG;
 import flixel.group.FlxSpriteGroup;
@@ -23,15 +23,18 @@ class FlxHitbox extends FlxSpriteGroup
 	/**
 	 * Create the zone.
 	 */
-	public function new():Void
+	public function new(mode:Modes):Void
 	{
 		super();
 
+		switch(mode)
+		{
+		case DEFAULT:
 		add(buttonLeft = createHint(0, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF00FF));
 		add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0x00FFFF));
 		add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), FlxG.height, 0x00FF00));
 		add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF0000));
-
+		}
 		scrollFactor.set();
 	}
 
@@ -42,10 +45,10 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super.destroy();
 
-		buttonLeft = FlxDestroyUtil.destroy(buttonLeft);
-		buttonUp = FlxDestroyUtil.destroy(buttonUp);
-		buttonDown = FlxDestroyUtil.destroy(buttonDown);
-		buttonRight = FlxDestroyUtil.destroy(buttonRight);
+		buttonLeft = null;
+		buttonUp = null;
+		buttonDown = null;
+		buttonRight = null;
 	}
 
 	private function createHintGraphic(Width:Int, Height:Int, Color:Int = 0xFFFFFF):BitmapData
