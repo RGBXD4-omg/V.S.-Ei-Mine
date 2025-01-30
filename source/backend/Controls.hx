@@ -6,11 +6,9 @@ import flixel.input.gamepad.mappings.FlxGamepadMapping;
 import flixel.input.keyboard.FlxKey;
 #if android
 import mobile.MobileControls;
-import mobile.FlxHitbox;
-//import mobile.FlxHitbox.Modes;
-import flixel.ui.FlxButton;
+import mobilel.FlxHitbox;
 #end
-
+	
 class Controls
 {
 	//Keeping same use cases on stuff for it to be easier to understand/use
@@ -40,7 +38,7 @@ class Controls
 	private function get_NOTE_DOWN_P() return justPressed('note_down');
 	private function get_NOTE_LEFT_P() return justPressed('note_left');
 	private function get_NOTE_RIGHT_P() return justPressed('note_right');
-
+	
 	// Held buttons (directions)
 	public var UI_UP(get, never):Bool;
 	public var UI_DOWN(get, never):Bool;
@@ -58,6 +56,7 @@ class Controls
 	private function get_NOTE_DOWN() return pressed('note_down');
 	private function get_NOTE_LEFT() return pressed('note_left');
 	private function get_NOTE_RIGHT() return pressed('note_right');
+
 
 	// Released buttons (directions)
 	public var UI_UP_R(get, never):Bool;
@@ -77,7 +76,6 @@ class Controls
 	private function get_NOTE_LEFT_R() return justReleased('note_left');
 	private function get_NOTE_RIGHT_R() return justReleased('note_right');
 
-
 	// Pressed buttons (others)
 	public var ACCEPT(get, never):Bool;
 	public var BACK(get, never):Bool;
@@ -88,15 +86,15 @@ class Controls
 	private function get_PAUSE() return justPressed('pause');
 	private function get_RESET() return justPressed('reset');
 
+        public static var CheckControl:Bool = false;
+
 	//Gamepad & Keyboard stuff
 	public var keyboardBinds:Map<String, Array<FlxKey>>;
 	public var gamepadBinds:Map<String, Array<FlxGamepadInputID>>;
-
-        public static var CheckControl:Bool = true;
 	public function justPressed(key:String)
 	{
 		var result:Bool = (FlxG.keys.anyJustPressed(keyboardBinds[key]) == true);
-		if(result) controllerMode = true;
+		if(result) controllerMode = false;
 
 		return result || _myGamepadJustPressed(gamepadBinds[key]) == true #if android || checkAndroidControl_justPressed(key) == true #end;
 	}
@@ -104,7 +102,7 @@ class Controls
 	public function pressed(key:String)
 	{
 		var result:Bool = (FlxG.keys.anyPressed(keyboardBinds[key]) == true);
-		if(result) controllerMode = true;
+		if(result) controllerMode = false;
 
 		return result || _myGamepadPressed(gamepadBinds[key]) == true #if android || checkAndroidControl_pressed(key) == true #end;
 	}
@@ -112,12 +110,12 @@ class Controls
 	public function justReleased(key:String)
 	{
 		var result:Bool = (FlxG.keys.anyJustReleased(keyboardBinds[key]) == true);
-		if(result) controllerMode = true;
+		if(result) controllerMode = false;
 
 		return result || _myGamepadJustReleased(gamepadBinds[key]) == true #if android || checkAndroidControl_justReleased(key) == true #end;
 	}
 
-	public var controllerMode:Bool = true;
+	public var controllerMode:Bool = false;
 	private function _myGamepadJustPressed(keys:Array<FlxGamepadInputID>):Bool
 	{
 		if(keys != null)
@@ -168,10 +166,11 @@ class Controls
 	private function checkAndroidControl_justPressed(key:String):Bool
 	{
 	    var result:Bool = false;	    
+	
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-			if (key == 'note_up'){
+    		    if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
@@ -195,24 +194,23 @@ class Controls
     private function checkAndroidControl_pressed(key:String):Bool
     {
     var result:Bool = false;    
-        
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-			if (key == 'note_up'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
+    		    if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.pressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_down'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.pressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_left'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.pressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_right'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.pressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
     		}//MusicBeatState.checkHitbox
@@ -223,24 +221,24 @@ class Controls
     
     private function checkAndroidControl_justReleased(key:String):Bool
     {
-    var result:Bool = false;
+    var result:Bool = false;    
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
-			if (key == 'note_up'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
+    		    if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justReleased == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_down'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justReleased == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_left'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justReleased == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_right'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justReleased == true);
         		if(result) {controllerMode = true; return true;}
     		    }
     		}//MusicBeatState.checkHitbox
