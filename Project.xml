@@ -2,15 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app
-		title="Friday Night Funkin': V.S. Ei Mine"
-		file="V.S. Ei Mine"
-		packageName="com.eimanécompany.eiminemod"
-		package="com.eimanécompany.eiminemod"
-		main="Main"
-		version="0.2.7"
-		company="EiMané Company"
-	/>
+	<app title="Friday Night Funkin': V.S. Ei Mine" file="V.S. Ei Mine" packageName="com.eiminecompany.eiminemod" package="com.eiminecompany.eiminemod" main="Main" version="0.2.7" company="EiMané Company"/>
 
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
 
@@ -21,11 +13,11 @@
 
 	<!-- ______________________ PSYCH ENGINE CUSTOMIZATION ______________________ -->
 
-	<define name="MODS_ALLOWED" if="desktop" />
+	<define name="MODS_ALLOWED" if="desktop || android" />
 	<define name="HSCRIPT_ALLOWED" if="desktop" />
-	<define name="LUA_ALLOWED" if="desktop" />
+	<define name="LUA_ALLOWED" if="desktop || android" />
 	<define name="ACHIEVEMENTS_ALLOWED" />
-	<define name="DISCORD_ALLOWED" />
+	<define name="DISCORD_ALLOWED" if="desktop" />
 	<define name="DISCORD_BUTTONS_ALLOWED" />
 	<define name="DARK_MODE" />
 	<define name="modFinalBuild" />
@@ -47,9 +39,8 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false" />
 
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0"
-		resizable="false" />
-
+	<window if="mobile" orientation="landscape" fullscreen="true" resizable="false" allow-shaders="true" require-shaders="true" allow-high-dpi="true" />
+	
 	<!--Switch-specific-->
 	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0"
 		resizable="true" />
@@ -98,6 +89,7 @@
 	<haxelib name="flixel-ui" />
 	<haxelib name="flixel-addons" />
 	<haxelib name="tjson" />
+	<haxelib name="extension-androidtools" if="android" />
 
 	<!--Psych
 	stuff needed-->
