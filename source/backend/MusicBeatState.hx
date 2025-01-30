@@ -31,6 +31,7 @@ class MusicBeatState extends FlxUIState
 
 	var _psychCameraInitialized:Bool = false;
 	public static var checkHitbox:Bool = false;
+	public static var checkHitbox:Bool = false;
 
 	       #if mobile
 		public static var mobileControls:MobileControls;
@@ -42,6 +43,10 @@ class MusicBeatState extends FlxUIState
 			switch(hType){
 			case DEFAULT:
 			checkHitbox = true;
+			checkh1 = false;
+			case DOUBLE:
+			checkh1 = true;
+			checkHitbox = false;
 			}
 
 			mobileControls = new MobileControls(hType);
