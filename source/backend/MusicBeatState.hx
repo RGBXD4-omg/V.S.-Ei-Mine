@@ -35,10 +35,6 @@ class MusicBeatState extends FlxUIState
 	       #if mobile
 		public static var mobileControls:MobileControls;
 
-		public function noCheckPress() {
-		Controls.CheckPress = false;
-	        }
-
 		public function addMobileControls(hType:Modes = DEFAULT)
 		{
 			if (mobileControls != null)
