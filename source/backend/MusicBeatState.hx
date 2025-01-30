@@ -6,7 +6,12 @@ import flixel.FlxState;
 import backend.PsychCamera;
 import openfl.ui.Mouse;
 import openfl.ui.MouseCursor;
-
+#if mobile
+import mobile.MobileControls;
+import flixel.FlxCamera;
+import flixel.util.FlxDestroyUtil;
+#end
+	
 class MusicBeatState extends FlxUIState
 {
 	private var curSection:Int = 0;
@@ -24,7 +29,52 @@ class MusicBeatState extends FlxUIState
 	}
 
 	var _psychCameraInitialized:Bool = false;
+	public static var checkHitbox:Bool = false;
 
+	       #if mobile
+		public static var mobileControls:MobileControls;
+
+		public function noCheckPress() {
+		Controls.CheckPress = false;
+	        }
+
+		public function addMobileControls()
+		{
+			if (mobileControls != null)
+			removeMobileControls();
+			
+			Controls.CheckPress = false;
+			checkHitbox = true;
+
+			mobileControls = new MobileControls();
+
+			var camControls:FlxCamera = new FlxCamera();
+			FlxG.cameras.add(camControls, false);
+			camControls.bgColor.alpha = 0;
+
+			mobileControls.cameras = [camControls];
+			mobileControls.visible = false;
+			add(mobileControls);
+			Controls.CheckControl = true;
+		}
+
+		public function removeMobileControls()
+		{
+
+			if (mobileControls != null)
+			remove(mobileControls);
+		}
+	#end
+
+		override function destroy()
+		{
+			super.destroy();
+
+			if (mobileControls != null)
+			mobileControls = FlxDestroyUtil.destroy(mobileControls);
+			#end
+		}
+	
 	override function create() {
 		var skip:Bool = FlxTransitionableState.skipNextTransOut;
 		#if MODS_ALLOWED Mods.updatedOnState = false; #end
