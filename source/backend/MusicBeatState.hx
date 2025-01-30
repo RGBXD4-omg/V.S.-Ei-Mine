@@ -9,6 +9,7 @@ import openfl.ui.MouseCursor;
 #if mobile
 import mobile.MobileControls;
 import flixel.FlxCamera;
+import mobile.FlxHitbox.Modes;
 import flixel.util.FlxDestroyUtil;
 #end
 	
