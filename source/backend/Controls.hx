@@ -92,8 +92,7 @@ class Controls
 	public var keyboardBinds:Map<String, Array<FlxKey>>;
 	public var gamepadBinds:Map<String, Array<FlxGamepadInputID>>;
 
-	public static var CheckPress:Bool = false;
-        public static var CheckControl:Bool = false;
+        public static var CheckControl:Bool = true;
 	public function justPressed(key:String)
 	{
 		var result:Bool = (FlxG.keys.anyJustPressed(keyboardBinds[key]) == true);
@@ -118,7 +117,7 @@ class Controls
 		return result || _myGamepadJustReleased(gamepadBinds[key]) == true #if android || checkAndroidControl_justReleased(key) == true #end;
 	}
 
-	public var controllerMode:Bool = false;
+	public var controllerMode:Bool = true;
 	private function _myGamepadJustPressed(keys:Array<FlxGamepadInputID>):Bool
 	{
 		if(keys != null)
