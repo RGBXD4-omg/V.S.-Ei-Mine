@@ -668,6 +668,11 @@ class PlayState extends MusicBeatState
 
 		if (eventNotes.length < 1)
 			checkEventNote();
+
+		#if android
+		addMobileControls()
+		mobileControls.visible = true;
+		#end
 	}
 
 	function set_songSpeed(value:Float):Float
