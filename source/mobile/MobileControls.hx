@@ -4,8 +4,7 @@ import flixel.FlxG;
 import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxPoint;
 import flixel.util.FlxDestroyUtil;
-import mobile.flixel.FlxHitbox;
-import mobile.flixel.FlxVirtualPad;
+import mobile.FlxHitbox;
 import mobile.FlxHitbox.Modes;
 /**
  * @author Mihai Alexandru (M.A. Jigsaw)
