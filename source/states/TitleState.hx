@@ -214,7 +214,7 @@ class TitleState extends InitState
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
 
-		#if mobile
+		#if !mobile
 		for (touch in FlxG.touches.list)
 			if (touch.justPressed)
 				pressedEnter = true;
