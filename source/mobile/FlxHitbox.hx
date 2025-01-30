@@ -100,4 +100,5 @@ class FlxHitbox extends FlxSpriteGroup
 }
 enum Modes{
 DEFAULT;
+DOUBLE;
 }
