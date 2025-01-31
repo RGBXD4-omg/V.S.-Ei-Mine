@@ -194,7 +194,7 @@ addVirtualPad(NONE, A);
 		persistentUpdate = true;
 		changeWeek();
 		
-                remove(virtualPad);
+                remove(MusicBeatState.virtualPad);
 
 		super.closeSubState();
 	}
