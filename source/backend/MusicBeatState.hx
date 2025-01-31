@@ -49,8 +49,7 @@ class MusicBeatState extends FlxUIState
 		}
 
 		public function addMobileControls(hType:Modes = DEFAULT)
-		{
-			Controls.CheckPress = false;
+	        {
 			if (mobileControls != null)
 			removeMobileControls();
 			switch(hType){
