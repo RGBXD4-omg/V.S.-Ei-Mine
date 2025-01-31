@@ -40,15 +40,14 @@ class MusicBeatState extends FlxUIState
 		{
 			if (mobileControls != null)
 			removeMobileControls();
-			/*switch(hType){
+			switch(hType){
 			case DEFAULT:
 			checkHitbox = true;
 			checkh1 = false;
 			case DOUBLE:
 			checkh1 = true;
 			checkHitbox = false;
-			}*/
-			checkHitbox = true;
+			}
 			
 			mobileControls = new MobileControls(hType);
 
