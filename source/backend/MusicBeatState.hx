@@ -9,6 +9,7 @@ import openfl.ui.MouseCursor;
 #if mobile
 import mobile.MobileControls;
 import flixel.FlxCamera;
+import mobile.FlxVirtualPad;
 import mobile.FlxHitbox.Modes;
 import flixel.util.FlxDestroyUtil;
 #end
@@ -35,6 +36,18 @@ class MusicBeatState extends FlxUIState
 
 	       #if mobile
 		public static var mobileControls:MobileControls;
+	        public static var virtualPad:FlxVirtualPad;
+
+	        public function addVirtualPad(DPad:FlxDPadMode, Action:FlxActionMode)
+		{
+		    if (virtualPad != null)
+			removeVirtualPad();
+
+		    virtualPad = new FlxVirtualPad(DPad, Action);
+		    add(virtualPad);
+	        Controls.checkState = true;
+		Controls.CheckPress = true;
+		}
 
 		public function addMobileControls(hType:Modes = DEFAULT)
 		{
@@ -71,6 +84,9 @@ class MusicBeatState extends FlxUIState
 		override function destroy()
 		{
 			super.destroy();
+
+			if (virtualPad != null)
+			virtualPad = FlxDestroyUtil.destroy(virtualPad);
 
 			if (mobileControls != null)
 			mobileControls = FlxDestroyUtil.destroy(mobileControls);
