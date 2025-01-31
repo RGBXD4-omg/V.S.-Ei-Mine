@@ -186,6 +186,14 @@ class Controls
     		    result = (MusicBeatState.virtualPad.buttonA.justPressed == true);
     		    if(result) {controllerMode = true; return true;}
 		}
+		if (key == 'ui_left'){
+        	    result = (MusicBeatState.virtualPad.buttonLeft.justPressed == true);
+        	    if(result) {controllerMode = true; return true;}
+        	}
+        	if (key == 'ui_right'){
+        	    result = (MusicBeatState.virtualPad.buttonRight.justPressed == true);
+    		    if(result) {controllerMode = true; return true;}
+		}
 	    }
 		//------------------note
 		if (CheckControl){
@@ -246,6 +254,14 @@ class Controls
     		    result = (MusicBeatState.virtualPad.buttonA.pressed == true);
     		    if(result) {controllerMode = true; return true;}
 		}
+		if (key == 'ui_left'){
+        	    result = (MusicBeatState.virtualPad.buttonLeft.pressed == true);
+        	    if(result) {controllerMode = true; return true;}
+        	}
+        	if (key == 'ui_right'){
+        	    result = (MusicBeatState.virtualPad.buttonRight.pressed == true);
+    		    if(result) {controllerMode = true; return true;}
+		}
 	    }
 		//------------------note
 		if (CheckControl){
@@ -304,8 +320,16 @@ class Controls
 
 	    if (CheckPress){
 		if (key == 'accept'){
-    		    result = (MusicBeatState.virtualPad.buttonA.justReleased == true);
-    		    if(result) {controllerMode = true; return true;}
+    		result = (MusicBeatState.virtualPad.buttonA.justReleased == true);
+    		if(result) {controllerMode = true; return true;}
+		}
+		if (key == 'ui_left'){
+        	result = (MusicBeatState.virtualPad.buttonLeft.justReleased == true);
+        	if(result) {controllerMode = true; return true;}
+        	}
+                if (key == 'ui_right'){
+        	result = (MusicBeatState.virtualPad.buttonRight.justReleased == true);
+    	       if(result) {controllerMode = true; return true;}
 		}
 	    }
 		//------------------note
