@@ -179,7 +179,7 @@ class StoryMenuState extends MusicBeatState
 		changeDifficulty();
 
 #if android
-addVirtualPad(NONE, L_R_A);
+addVirtualPad(LEFT_RIGHT, A);
 #end
 
 		backButton = new MCButton("<", 10, FlxG.height - 60, SQUARE);
