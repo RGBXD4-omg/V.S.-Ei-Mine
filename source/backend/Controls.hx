@@ -206,7 +206,7 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
-		}else{
+		}
 		    if (MusicBeatState.checkh1){
 		        if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
@@ -233,7 +233,6 @@ class Controls
         		if(result) {controllerMode = true; return true;}
 			}
 		    }
-	       }
 	    }//CheckControl
 	    return false;
     }        
@@ -267,7 +266,7 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.pressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
-    		}else{
+		}
 		    if (MusicBeatState.checkh1){
 		        if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.pressed == true);
@@ -294,7 +293,6 @@ class Controls
         		if(result) {controllerMode = true; return true;}
 			}
 		    }
-		}
 	    }//CheckControl
         return false;
 	   // if (result) return true;
@@ -329,7 +327,7 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justReleased == true);
         		if(result) {controllerMode = true; return true;}
     		    }
-    		}else{
+		}
 		    if (MusicBeatState.checkh1){
 		        if (key == 'note_up'){
         		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justReleased == true);
@@ -356,7 +354,6 @@ class Controls
         		if(result) {controllerMode = true; return true;}
 			}
 		    }
-		}
 	    }//CheckControl
 	    return false;
 	  //  if (result) return true;    
