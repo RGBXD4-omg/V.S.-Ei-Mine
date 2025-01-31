@@ -57,6 +57,10 @@ class TitleState extends InitState
 	{
 		super.create();
 
+#if android
+FlxG.android.preventDefaultKeys = [BACK];
+#end
+
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
 		// IGNORE THIS!!!
