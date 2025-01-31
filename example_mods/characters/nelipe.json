@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-4
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				3,
+				-1
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "puto",
+			"fps": 24,
+			"name": "putinho",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/nelipe feto",
+	"position": [
+		-110,
+		40
+	],
+	"healthicon": "fe",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		138,
+		43
+	],
+	"camera_position": [
+		-1589,
+		-370
+	],
+	"sing_duration": 7,
+	"scale": 2.5
+}

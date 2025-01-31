@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				6,
+				2
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down"
+		},
+		{
+			"offsets": [
+				3,
+				3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up"
+		},
+		{
+			"offsets": [
+				1,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "danceleft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "danceright",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/ei mine_medinho",
+	"position": [
+		-50,
+		150
+	],
+	"healthicon": "ei2",
+	"flip_x": false,
+	"healthbar_colors": [
+		63,
+		0,
+		104
+	],
+	"camera_position": [
+		-1909,
+		-260
+	],
+	"sing_duration": 7,
+	"scale": 2.9
+}

@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Ei Idle"
+		},
+		{
+			"offsets": [
+				52,
+				-5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Ei Left"
+		},
+		{
+			"offsets": [
+				-44,
+				-74
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Ei Down"
+		},
+		{
+			"offsets": [
+				13,
+				30
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Ei Up"
+		},
+		{
+			"offsets": [
+				36,
+				-5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Ei Right"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/primeiro_eimane",
+	"position": [
+		170,
+		210
+	],
+	"healthicon": "ei-old",
+	"flip_x": false,
+	"healthbar_colors": [
+		71,
+		77,
+		67
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 0.9
+}

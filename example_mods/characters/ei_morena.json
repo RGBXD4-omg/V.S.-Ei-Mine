@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 26,
+			"anim": "fala",
+			"loop": false,
+			"name": "fala"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/ei_morena",
+	"position": [
+		170,
+		80
+	],
+	"healthicon": "ei_morena",
+	"flip_x": false,
+	"healthbar_colors": [
+		63,
+		0,
+		144
+	],
+	"camera_position": [
+		-2349,
+		-460
+	],
+	"sing_duration": 7,
+	"scale": 2.9
+}

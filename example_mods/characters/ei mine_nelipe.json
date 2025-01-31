@@ -1,0 +1,91 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				7,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				7,
+				-1
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				9,
+				-6
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				7,
+				0
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				8,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right0",
+			"indices": []
+		},
+		{
+			"offsets": [
+				6,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "spawnando",
+			"indices": [],
+			"name": "spawn"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/ei mine_nelipe",
+	"position": [
+		-1030,
+		10
+	],
+	"healthicon": "ei3",
+	"flip_x": true,
+	"healthbar_colors": [
+		71,
+		20,
+		67
+	],
+	"camera_position": [
+		560,
+		-550
+	],
+	"sing_duration": 7,
+	"scale": 2.9,
+	"_editor_isPlayer": true
+}
