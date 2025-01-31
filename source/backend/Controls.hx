@@ -6,6 +6,7 @@ import flixel.input.gamepad.mappings.FlxGamepadMapping;
 import flixel.input.keyboard.FlxKey;
 #if android
 import mobile.MobileControls;
+import mobile.FlxVirtualPad;
 import mobile.FlxHitbox;
 #end
 	
@@ -99,6 +100,7 @@ class Controls
 	private function get_RESET() return justPressed('reset');
 
         public static var CheckControl:Bool = false;
+	public static var CheckPress:Bool = false;
 
 	//Gamepad & Keyboard stuff
 	public var keyboardBinds:Map<String, Array<FlxKey>>;
@@ -178,7 +180,13 @@ class Controls
 	private function checkAndroidControl_justPressed(key:String):Bool
 	{
 	    var result:Bool = false;	    
-	
+
+	    if (CheckPress){
+		if (key == 'accept'){
+    		    result = (MusicBeatState.virtualPad.buttonA.justPressed == true);
+    		    if(result) {controllerMode = true; return true;}
+		}
+	    }
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
@@ -233,6 +241,13 @@ class Controls
     private function checkAndroidControl_pressed(key:String):Bool
     {
     var result:Bool = false;    
+
+	    if (CheckPress){
+		if (key == 'accept'){
+    		    result = (MusicBeatState.virtualPad.buttonA.pressed == true);
+    		    if(result) {controllerMode = true; return true;}
+		}
+	    }
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
@@ -288,6 +303,13 @@ class Controls
     private function checkAndroidControl_justReleased(key:String):Bool
     {
     var result:Bool = false;    
+
+	    if (CheckPress){
+		if (key == 'accept'){
+    		    result = (MusicBeatState.virtualPad.buttonA.justReleased == true);
+    		    if(result) {controllerMode = true; return true;}
+		}
+	    }
 		//------------------note
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
