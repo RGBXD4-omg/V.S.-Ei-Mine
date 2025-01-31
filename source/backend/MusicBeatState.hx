@@ -45,7 +45,6 @@ class MusicBeatState extends FlxUIState
 
 		    virtualPad = new FlxVirtualPad(DPad, Action);
 		    add(virtualPad);
-	        Controls.checkState = true;
 		Controls.CheckPress = true;
 		}
 
