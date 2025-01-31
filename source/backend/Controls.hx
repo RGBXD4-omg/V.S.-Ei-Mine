@@ -186,7 +186,34 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
-    		}//MusicBeatState.checkHitbox
+		}else{
+		    if (MusicBeatState.checkh1){
+		        if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_down'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_left'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_right'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+			}
+			if (key == 'q'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonQ.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+			}
+			if (key == 'e'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonE.justPressed == true);
+        		if(result) {controllerMode = true; return true;}
+			}
+		    }
+	       }
 	    }//CheckControl
 	    return false;
     }        
@@ -213,7 +240,34 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.pressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
-    		}//MusicBeatState.checkHitbox
+    		}else{
+		    if (MusicBeatState.checkh1){
+		        if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_down'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_left'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_right'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+			}
+			if (key == 'q'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonQ.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+			}
+			if (key == 'e'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonE.pressed == true);
+        		if(result) {controllerMode = true; return true;}
+			}
+		    }
+		}
 	    }//CheckControl
         return false;
 	   // if (result) return true;
@@ -241,7 +295,34 @@ class Controls
         		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justReleased == true);
         		if(result) {controllerMode = true; return true;}
     		    }
-    		}//MusicBeatState.checkHitbox
+    		}else{
+		    if (MusicBeatState.checkh1){
+		        if (key == 'note_up'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_down'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_left'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+        		}
+        		if (key == 'note_right'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+			}
+			if (key == 'q'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonQ.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+			}
+			if (key == 'e'){
+        		result = (MusicBeatState.mobileControls.hitbox.buttonE.justReleased == true);
+        		if(result) {controllerMode = true; return true;}
+			}
+		    }
+		}
 	    }//CheckControl
 	    return false;
 	  //  if (result) return true;    
