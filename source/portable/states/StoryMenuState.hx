@@ -179,7 +179,7 @@ class StoryMenuState extends MusicBeatState
 		changeDifficulty();
 
 #if android
-addVirtualPad(NONE, A);
+addVirtualPad(NONE, L_R_A);
 #end
 
 		backButton = new MCButton("<", 10, FlxG.height - 60, SQUARE);
@@ -193,8 +193,6 @@ addVirtualPad(NONE, A);
 	{
 		persistentUpdate = true;
 		changeWeek();
-		
-                remove(MusicBeatState.virtualPad);
 
 		super.closeSubState();
 	}
